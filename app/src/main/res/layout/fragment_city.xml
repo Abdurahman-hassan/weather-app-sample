@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CityFragment"
+    android:orientation="vertical">
+
+
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/search_bar"
+        style="@style/MaterialSearchBarLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mt_hint="City Name"
+        app:mt_speechMode="false">
+    </com.mancj.materialsearchbar.MaterialSearchBar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.MainActivity">
+
+                <RelativeLayout
+                    android:id="@+id/relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/weather_forecast"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/city_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        tools:text="Cairo"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Country"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/city_name"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        tools:text="EG"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/temp_condition"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        tools:text="Friday, June 30" />
+
+                    <TextView
+                        android:id="@+id/describtion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/weather_resource_img"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="14dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="Light Rain" />
+
+                    <ImageView
+                        android:id="@+id/weather_resource_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="8dp"
+                        android:src="@drawable/art_light_clouds" />
+
+                    <TextView
+                        android:id="@+id/temp_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/city_name"
+                        android:padding="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="64sp"
+                        tools:text="36C" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relative"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/thermometer"
+                                android:layout_width="50dp"
+                                android:layout_height="70dp"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/thermometer" />
+
+                            <TextView
+                                android:id="@+id/feels_like"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/thermometer"
+                                android:text="@string/feels_like"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/temperature_feelsLike"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/feels_like"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/thermometer"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="22C" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/feels_like"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/temperature_feelsLike"
+                                android:text="@string/today"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/humidity_img"
+                                android:layout_width="50dp"
+                                android:layout_height="70dp"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/humidity" />
+
+                            <TextView
+                                android:id="@+id/humidity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/humidity_img"
+                                android:text="@string/humidity"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/humidity_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/humidity"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/humidity_img"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="22C" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/wind_img"
+                                android:layout_width="50dp"
+                                android:layout_height="70dp"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/wind" />
+
+                            <TextView
+                                android:id="@+id/wind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/wind_img"
+                                android:text="@string/wind"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/wind_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/wind"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/wind_img"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="22C" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/pres"
+                                android:layout_width="50dp"
+                                android:layout_height="70dp"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/ic_baseline_explore_24" />
+
+                            <TextView
+                                android:id="@+id/sun_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/pres"
+                                android:text="@string/pressure"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/pressure_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sun_txt"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/pres"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="22C" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>
